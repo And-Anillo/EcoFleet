@@ -9,12 +9,62 @@ package com.ecofleet.modelo;
  * @author supersayagym
  */
 public class bicicleta implements vehiculo {
+    private int id;
+    private String marca;
+    private String modelo;
+    private boolean disponible;
     private int velocidadActual = 0;
-    private final double CostoPorHora = 0.15;
 
+
+    public bicicleta(int id, String marca, String modelo) {
+        this.id = id;
+        this.marca = marca;
+        this.modelo = modelo;
+    }
+
+    public bicicleta() {
+    }
+    
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
+    
     @Override
     public String getTipo() {
         return "bicicleta";
+    }
+    
+    @Override
+    public String getMarca() {
+        return marca;
+    }
+
+    @Override
+    public String getModelo() {
+        return modelo;
+    }
+
+    @Override
+    public String getPlaca() {
+        // Una bicicleta no tiene placa. Retorna null para la BD.
+        return null;
+    }
+
+    @Override
+    public boolean isDisponible() {
+        return disponible;
     }
 
     @Override
@@ -29,11 +79,6 @@ public class bicicleta implements vehiculo {
         System.out.println("Bicicleta detenida.");
     }
 
-    @Override
-    public double calcularCostoUso(double kmRecorridos) {
-        double CostoTotalR = CostoPorHora * kmRecorridos;// El costo de uso para una bicicleta es típicamente cero (sin combustible)
-        System.out.println("costo total por" + kmRecorridos + " km: $ " + String.format("%.2f", CostoTotalR) );
-        return CostoTotalR;
-    }
+    
     
 }

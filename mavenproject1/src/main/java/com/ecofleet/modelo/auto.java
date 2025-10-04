@@ -9,13 +9,69 @@ package com.ecofleet.modelo;
  * @author supersayagym
  */
 public class auto implements vehiculo {
+    private int id; // Columna 'id'
+    private String marca; // Columna 'marca'
+    private String modelo; // Columna 'modelo'
+    private String placa; // Columna 'placa'
+    private boolean disponible; // Columna 'disponible
     private int velocidadActual = 0;
     private double nivelCombustible = 50.0;
     private final double CostoPorKm = 0.15;
 
+    public auto(int id, String marca, String modelo, String placa, boolean disponible) {
+        this.id = id;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.placa = placa;
+        this.disponible = disponible;
+    }
+
+    public auto() {
+    }
+
+    
+    
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    
+    
     @Override
     public String getTipo() {
         return "auto";
+    }
+    
+    @Override
+    public String getMarca() {
+        return marca;
+    }
+
+    @Override
+    public String getModelo() {
+        return modelo;
+    }
+
+    @Override
+    public String getPlaca() {
+        return placa; // El auto tiene placa
+    }
+
+    @Override
+    public boolean isDisponible() {
+        return disponible;
     }
 
     @Override
@@ -34,11 +90,9 @@ public class auto implements vehiculo {
     System.out.println("El auto se ha detenido.");
 }
 
-    @Override
-    public double calcularCostoUso(double kmRecorridos) {
-    double costoTotal = kmRecorridos * CostoPorKm;
-    System.out.println("Costo total de uso para " + kmRecorridos + " km: $" + String.format("%.2f", costoTotal));
-    return costoTotal;
-}
     
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }    
 }
