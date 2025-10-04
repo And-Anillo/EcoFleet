@@ -89,9 +89,7 @@ public class auto implements vehiculo {
     this.velocidadActual = 0; 
     System.out.println("El auto se ha detenido.");
 }
-
     
-
     public void setDisponible(boolean disponible) {
         this.disponible = disponible;
     }    

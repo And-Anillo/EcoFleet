@@ -16,10 +16,11 @@ public class bicicleta implements vehiculo {
     private int velocidadActual = 0;
 
 
-    public bicicleta(int id, String marca, String modelo) {
+    public bicicleta(int id, String marca, String modelo, boolean disponible) {
         this.id = id;
         this.marca = marca;
         this.modelo = modelo;
+        this.disponible = disponible;
     }
 
     public bicicleta() {
