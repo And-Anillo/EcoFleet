@@ -29,8 +29,6 @@ public class auto implements vehiculo {
     public auto() {
     }
 
-    
-    
     public void setId(int id) {
         this.id = id;
     }
@@ -46,8 +44,6 @@ public class auto implements vehiculo {
     public void setPlaca(String placa) {
         this.placa = placa;
     }
-
-    
     
     @Override
     public String getTipo() {
@@ -93,4 +89,9 @@ public class auto implements vehiculo {
     public void setDisponible(boolean disponible) {
         this.disponible = disponible;
     }    
+    //ultima modifcacion de implementacion con parametros para auto
+    @Override
+    public int getId() {
+        return id;
+    }
 }

@@ -10,6 +10,7 @@ package com.ecofleet.modelo;
  */
 public interface vehiculo {
     
+    public int getId();
     public String getTipo();
     public String getMarca();
     public String getModelo();

@@ -41,6 +41,11 @@ public class bicicleta implements vehiculo {
     public void setDisponible(boolean disponible) {
         this.disponible = disponible;
     }
+
+    @Override
+    public int getId() {
+        return id;
+    }
     
     @Override
     public String getTipo() {
