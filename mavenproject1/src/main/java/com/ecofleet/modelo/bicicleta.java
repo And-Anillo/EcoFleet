@@ -9,25 +9,31 @@ package com.ecofleet.modelo;
  * @author supersayagym
  */
 public class bicicleta implements vehiculo {
+    private int velocidadActual = 0;
+    private final double CostoPorHora = 0.15;
 
     @Override
     public String getTipo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return "bicicleta";
     }
 
     @Override
     public void acelerar(int kmh) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.velocidadActual += kmh;
+        System.out.println("Bicicleta acelerada. Nueva velocidad: " + this.velocidadActual + " km/h");
     }
 
     @Override
     public void frenar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.velocidadActual = 0;
+        System.out.println("Bicicleta detenida.");
     }
 
     @Override
     public double calcularCostoUso(double kmRecorridos) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        double CostoTotalR = CostoPorHora * kmRecorridos;// El costo de uso para una bicicleta es típicamente cero (sin combustible)
+        System.out.println("costo total por" + kmRecorridos + " km: $ " + String.format("%.2f", CostoTotalR) );
+        return CostoTotalR;
     }
     
 }
